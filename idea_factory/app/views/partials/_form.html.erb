@@ -1,0 +1,11 @@
+<%= form_with model: @idea, class: "formInput" do |f| %> 
+  <div class="formInput form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title %>  
+  </div>
+  <div class="formInput form-group">
+    <%= f.label :description %> 
+    <%= f.text_area :description, cols: 50, rows: 5 %>
+  </div>
+    <%= f.submit class: "btn btn-outline-primary btn-size my-2" %>
+<% end %> 

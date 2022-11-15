@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap';
+
+body {
+  // background-color: firebrick;
+  box-sizing: border-box;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.nav-item {
+  list-style: none;
+  padding: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-item:nth-child(1) {
+  margin-right: auto;
+  font-size: 1.5em;
+}
+
+.flex-grow {
+  flex: 1 0 auto;
+}
+
+.flex-grow-test {
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+
+/* Input Styles */
+
+.input-flex {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.btn-pos {
+  display: flex;
+}
+
+.btn-marg {
+  margin-right: 0.5em;
+}
+
+.btn-size {
+  width: 10em;
+  padding: 0.5em;
+  margin-left: 1.5em;
+}
+
+.comment {
+  font-size: 1.8em;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.formInput {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 0.5em;
+  margin: 0.5em 1em 0em 1em;
+}
+
+input, textarea {
+  padding: 0.5em;
+  border: 1px solid rgb(207, 212, 217);
+  border-radius: 3px;
+  width: 100%;
+}
+
+.text-card {
+  color: #000;
+}

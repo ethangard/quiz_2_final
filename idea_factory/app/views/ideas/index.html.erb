@@ -1,0 +1,12 @@
+<div class="row justify-content-center m-4">
+    <% @ideas.each do |idea| %>
+     <hr>
+      <%= link_to idea, class: "card flex-fill col-lg-3 col-md-4 col-12 p-4 mt-4 mx-2" do %>
+        <h4><%= idea.title %></h4>
+        <p class="text-card"><%= idea.description %></p> 
+      <p> Idea By: <%= idea.user.name %> | <small> Liked by: <%= idea.likes.count %> folks</small></p>
+    <% end %>   
+    <% end %> 
+
+    <%= @likes %> 
+</div>

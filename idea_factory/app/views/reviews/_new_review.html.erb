@@ -1,0 +1,18 @@
+<h3>Reviews</h3>
+<% if @review.errors.any? %>
+  <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li> <%= msg %></li>
+    <% end %> 
+  </ul>
+<% end %>
+
+<%= form_with(model:[@idea, @review]) do |f| %>
+  <div>
+    <%= f.text_field :rating, placeholder:"Whats your rating 1-5?" %>
+  </div>
+  <div>
+    <%= f.text_area :body, cols: 50, rows: 5, placeholder:"Whats your review of this idea?" %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-outline-primary my-2" %>
+<% end %>

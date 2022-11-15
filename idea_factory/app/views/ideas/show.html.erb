@@ -1,0 +1,48 @@
+<!-- <h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p>
+ -->
+
+<div class="container">
+  <div class="show-idea">
+    <h1 class="mt-4"><%= @idea.title %></h1>
+      <p><%= @idea.description %> </p>
+    <p><small>Posted <%= time_ago_in_words(@idea.created_at) %> ago </small></p>
+    <p><small>Liked by: <%= @idea.likes.count %> folks </small></p>
+
+    <% if can? :crud, @idea %> 
+      <div class="btn-pos">
+        <%= button_to 'Edit', edit_idea_path(@idea), method: :get, class: 'btn btn-outline-primary btn-marg mb-4' %> 
+
+        <%= button_to 'Delete', idea_path(@idea), method: :delete, class: "btn btn-outline-primary btn-marg mb-4", form: {data: {turbo_confirm: "Are you sure?"}} %> 
+        
+    </div>
+    <% end %>
+
+    <% if @like.present? %> 
+          <%= button_to "Unlike", like_path(@like), method: :delete %>
+          <% else %> 
+          <%= button_to "Like", idea_likes_path(@idea), method: :post %>
+      <% end %> 
+  </div>  
+
+    <%= render 'reviews/new_review' %> 
+
+  <ul>
+    <% @reviews.each do |review| %>
+    <li>
+      <%= review.body %>
+        <small>
+          Reviewed by <%= review.user.name %> <%= time_ago_in_words(review.created_at)%> ago
+        </small>
+        <br>
+        
+        <small>Rating: <%= review.rating %> </small>
+        <% if can? :crud, review %>
+          <%= link_to "Delete", idea_review_path(@idea.id, review.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+         <% end %> 
+        <br>
+        <br>
+      <% end %>
+    </li>
+  </ul>
+</div>

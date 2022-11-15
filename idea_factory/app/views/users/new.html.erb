@@ -1,0 +1,24 @@
+<% if @user.errors.any? %> 
+  <p> <%= @user.errors.full_messages.join(', ') %></p>
+<% end %>
+
+<%= form_with model: @user, class: "formInput" do |f| %>
+  <div class="formInput form-group">
+    <h1>Sign Up</h1>
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  </div>
+  <div class="formInput form-group">
+    <%= f.label :email%> 
+    <%= f.text_field :email%>
+  </div>
+  <div class="formInput form-group">
+    <%= f.label :password%> 
+    <%= f.text_field :password%>
+  </div>
+  <div class="formInput form-group">
+    <%= f.label :password_confirmation%> 
+    <%= f.text_field :password_confirmation%>
+  </div>
+  <%= f.submit "Sign Up", class: "btn btn-outline-primary btn-size my-2" %> 
+<% end %>

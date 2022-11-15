@@ -1,0 +1,12 @@
+<%= form_with url: session_path, class: "formInput" do |f| %>
+<div class="formInput form-group">
+      <h1>Sign In</h1>
+    <%= f.label :email %> 
+    <%= f.text_field :email %> 
+  </div> 
+    <div class="formInput form-group">
+    <%= f.label :password %> 
+    <%= f.password_field :password %> 
+  </div> 
+  <%= f.submit "Sign In", class: "btn btn-outline-primary btn-size my-2" %> 
+<% end %>
